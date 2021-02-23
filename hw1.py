@@ -44,116 +44,80 @@
 #     '5) Поиск по названию покупки'
 #     '9) Выход'
 # - можете придумать свои пункты
-
-# print('hello world')
-
-list1 = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
+# =======================================================================================================================
 
 
-# 1.1 print(min(list1))
-
-# list1.remove(2)
-# print(list1)
-# print(list1.count(22))
-# print(list1[3::4])
-
-# 1.2 ?????????????
+# 1.1 найти min число в листе
 # list1 = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
-# listOfDuplicates = {}
-# toDelete = []
-# print(list1)
-#
+# варіант 1
+# minInteger = list1[0]
 # for i in list1:
-#     for k in list1:
-#         if i == k:
-#             if i in listOfDuplicates:
-#                 listOfDuplicates[i] = 2
-#             else:
-#                 listOfDuplicates[i] = 1
+#     if i < minInteger:
+#         minInteger = i
 #
-# print(listOfDuplicates)
-#
-# for k in listOfDuplicates:
-#     if listOfDuplicates[k] > 1:
-#         toDelete.append(k)
-#
-# print(toDelete)
+# print(minInteger)
 
-# for i in list1:
-#     for k in toDelete:
-#         if i == k:
-#             print(i)
-#             list1.remove(i)
-#
+# варіант 2
+# print(min(list1))
+# =======================================================================================================================
 
-# for i in toDelete:
-#     list1.remove()
-#     print(i)
 
-# print(list1)
+# 1.2 удалить все одинаковые значения
+# list1 = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
 
-#1111111111111111
+# варіант видалення пар однакових чисел
 # i = 0
-# l = [3, 4, 3, 5, 6, 4]
-# while i < len(l):
-#     if l.count(l[i]) > 1:
-#         while l.count(l[i]) > 1:
-#             l.remove(l[i])
-#         l.remove(l[i])
+# while i < len(list1):
+#     current = list1[i]
+#     if list1.count(current) > 1:
+#         while list1.count(current) > 0:
+#             list1.remove(current)
 #     else:
 #         i += 1
 # print(list1)
 
-#2222222222222222222222222222222222222222
+# варіант видалення лише дублікатів
+# list1 = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
 # i = 0
-# l = [3, 4, 3, 5, 6, 4]
-# while i < len(l):
-#     current = l[i]
-#     if l.count(current) > 1:
-#         while l.count(current) > 0:
-#             l.remove(current)
+# while i < len(list1):
+#     current = list1[i]
+#     if list1.count(current) > 1:
+#         while list1.count(current) > 1:
+#             list1.remove(current)
 #     else:
 #         i += 1
 # print(list1)
 
-#33333333333333333333333333333
-# i = 0
-# l = [3, 4, 3, 5, 6, 4]
-# while i < len(l):
-#     current = l[i]
-#     if l.count(current) > 1:
-#         while l.count(current) > 1:
-#             l.remove(current)
-#     else:
-#         i += 1
-# print(list1)
+# =======================================================================================================================
 
-
-
-
-# # 1.3
+# # 1.3 заменить каждое четвертое значение на "Х"
+# list1 = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
+#
 # for i in list1[::4]:
 #     list1[list1.index(i)] = 'x'
-#     print(i)
+#
 # print(list1)
 
+# =======================================================================================================================
+
 # 2)вывести на экран пустой квадрат из "*" сторона которого указана в переменой:
+
 # side = input('Enter side length:')
 # print('Side length:', side)
 # a = int(side)
 # i = 1
 #
 # while i <= a:
-#     if i == 1:
-#         print('*' * (a+2))
-#     print('*', ' ' * (a-2), '*')
-#     if i == a:
-#         print('*' * (a+2))
+#     if i == 1 or i == a:
+#         print('*' * (a + 2))
+#     else:
+#         print('*', ' ' * (a - 2), '*')
 #     i += 1
+# =======================================================================================================================
 
 # 3) переделать первое задание под меню с помощью цикла
-
-
+# list1 = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
+#
 # a = '1 найти min число в листе'
 # b = '2 удалить все одинаковые значения'
 # c = '3 заменить каждое четвертое значение на "Х'
@@ -163,17 +127,40 @@ list1 = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
 #
 # for i in menuList:
 #     print(i)
-# e = input('Choose an option:')
-# print('Your chosen task:', e)
-#
+# e = input('Choose task number:')
 # chosenTask = int(e)
-# print(menuList[int(e) - 1])
 #
 # if chosenTask == 1:
-#     print(min(list1))
-#
-# if chosenTask == 3:
+#     print('Your chosen task:', menuList[int(e) - 1])
+#     print('Your result:', min(list1))
+# elif chosenTask == 2:
+#     print('Your chosen task:', menuList[int(e) - 1])
+#     i = 0
+#     while i < len(list1):
+#         current = list1[i]
+#         if list1.count(current) > 1:
+#             while list1.count(current) > 1:
+#                 list1.remove(current)
+#         else:
+#             i += 1
+#     print('Your result:', list1)
+# elif chosenTask == 3:
+#     print('Your chosen task:', menuList[int(e) - 1])
 #     for i in list1[::4]:
 #         list1[list1.index(i)] = 'x'
-#     print(i)
-# print(list1)
+#     print('Your result:', list1)
+# elif chosenTask == 4:
+#     print('Your chosen task:', menuList[int(e) - 1])
+#     side = input('Enter side length:')
+#     print('Side length:', side)
+#     a = int(side)
+#     i = 1
+#
+#     while i <= a:
+#         if i == 1 or i == a:
+#             print('*' * (a + 2))
+#         else:
+#             print('*', ' ' * (a - 2), '*')
+#         i += 1
+# else:
+#     print('No such task number.')
