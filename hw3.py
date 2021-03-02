@@ -63,53 +63,61 @@
 # prince.find(list_of_cinderellas)
 
 # ========================================================================================
-# TODO
 # 2)
 # Создать класс Rectangle:
 # -конструктор принимает две стороны x,y
 # -описать арифметические методы:
-#   + сума площадей двух экземпляров класса +
-#   - разница площадей +
+#   + сума площадей двух экземпляров класса
+#   - разница площадей
 #   == или площади равны
 #   != не равны
 #   >, < меньше или больше
 #   при вызове метода len() подсчитывать сумму сторон
 
-class Rectangle:
+# class Rectangle:
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#     def perimeter(self):
+#         return self.x + self.y
+#
+#     def area(self):
+#         return self.x * self.y
+#
+#     def __add__(self, other):
+#         return self.area() + other.area()
+#
+#     def __sub__(self, other):
+#         return self.area() - other.area()
+#
+#     def __eq__(self, other):
+#         return self.area() == other.area()
+#
+#     def __ne__(self, other):
+#         return self.area() != other.area()
+#
+#     def __lt__(self, other):
+#         print(self.area())
+#         return self.area() < other.area()
+#
+#     def __len__(self):
+#         return self.x + self.y
+#
+#
+# rectangle1 = Rectangle(5, 2)
+# rectangle2 = Rectangle(2, 2)
 
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def perimeter(self):
-        return self.x + self.y
-
-    def area(self):
-        return self.x * self.y
-
-    def __add__(self, other):
-        return self.area() + other.area()
-
-    def __sub__(self, other):
-        return self.area() - other.area()
-
-    def __eq__(self, other):
-        return self.area() == other.area()   # google
-
-    def __eq__(self, other):
-        return self.area() != other.area()
-
-
-
-rectangle1 = Rectangle(5, 2)
-rectangle2 = Rectangle(2, 2)
-
-print(rectangle1.area())
-print(rectangle2.area())
-print(rectangle1 + rectangle2)
-print(rectangle1 - rectangle2)
-print(rectangle1 == rectangle2)
-print(rectangle1 != rectangle2)
+# print(rectangle1.area())
+# print(rectangle2.area())
+# print(rectangle1 + rectangle2)
+# print(rectangle1 - rectangle2)
+# print(rectangle1 == rectangle2)
+# print(rectangle1 != rectangle2)
+# print(rectangle1 > rectangle2)
+# print(len(rectangle1))
+# print(len(rectangle2))
 
 
 

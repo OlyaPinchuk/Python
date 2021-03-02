@@ -30,61 +30,78 @@
 #   швидше за поїзд"
 #   - вивести всі дані про перевезення(поїзд)
 # ===========================================================================================================
-# TODO
 # TASK 1
 #
 # my_list = []
-#
-#
+# 
+# 
 # class Letter:
 #     __count = 0
-#
+# 
 #     def __init__(self, text):
 #         self.__text = text
-#         self.__count += 1
-#
+#         self._increment_count()
+# 
 #     def __set_text(self, text):
 #         self.__text = text
-#
+# 
 #     def __get_text(self, text):
 #         return self.__text
-#
+# 
 #     def set_to_list(self):
 #         my_list.append(self.__text)
-#
-#
+# 
+#     @classmethod
+#     def _increment_count(cls):
+#         cls.__count += 1
+# 
+#     @classmethod
+#     def get_count(cls):
+#         return cls.__count
+# 
+# 
 # my_letter1 = Letter('This is letter 1')
 # my_letter2 = Letter('This is letter 2')
-#
+# 
 # my_letter1.set_to_list()
 # my_letter2.set_to_list()
-#
+# 
 # print(my_letter1.__dict__)
 # print(my_letter2.__dict__)
-#
+# 
 # print(my_list)
+# 
+# print(Letter.get_count())
 
 
 # ===========================================================================================================
 # TODO
 # TASK 2
 
-#
 # class Vehicle:
 #
-#     def __init__(self, travel_time, price, registration_time, class_type):
+#     def __init__(self, travel_time):
 #         self.travel_time = travel_time
-#         self.price = price
-#         self.registration_time = registration_time
-#         self.class_type = class_type
+#
+#     def show_info(self):
+#         return dict(travel_time=self.travel_time, vehicle_type=self.vehicle_type)
 #
 #
 # class Plane(Vehicle):
 #
-#     def __init__(self):
-#         super().__init__()
-#         self.vehicle = 'plane'
+#     vehicle_type = 'plane'
+#
+#     def __init__(self, travel_time, class_type):
+#         super().__init__(travel_time)
+#         self.class_type = class_type
+#
+#     def show_info(self):
+#         info = {**super().show_info(), **self.__dict__}
+#
+#         return info
 #
 #
-# pass1 = Plane()
-# print(pass1.__dict__)
+# passenger1 = Plane('2hr', '1st class')
+#
+# print(passenger1.show_info())
+#
